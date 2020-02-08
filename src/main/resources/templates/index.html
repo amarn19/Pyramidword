@@ -16,15 +16,18 @@ body {font-family:"Lato",sans-serif}
 <div class="banner">
     <h2>Check whether the word is pyramid word or not</h2>
     <p>Enter the string</p>
-    <form>
-        <input type="text" id="input" placeholder="Enter the string" required />
+        <input type="text" id="input" placeholder="Enter the string" onkeyup="lettersOnly()" />
         <input type="button" value="submit" onclick="check()">
         <input type="reset">
-    </form>
 </div>
 
 
 <script>
+function lettersOnly(){
+var regex=/[^a-z]/gi;
+input.value=input.value.replace(regex,"");
+}
+
 function check(){
 var inp=document.getElementById("input").value;
 var xhttp = new XMLHttpRequest();
